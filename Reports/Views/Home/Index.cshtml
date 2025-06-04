@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to Reports</h1>
+    <p>This is a simple MVC application.</p>
+    <a class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 shadow-sm transition-all"
+       asp-controller="User" asp-action="UserList" style="width: auto; display: inline-block;">
+        <i class="bi bi-people"></i> Users
+    </a>
+
+
+    
+
+
+
+
+
+    <form asp-controller="Home" asp-action="UploadFile" method="post" enctype="multipart/form-data">
+        <div class="form-group d-flex justify-content-center mt-5">
+            <div class="w-50">
+                <label for="fileInput">Choose a file to upload:</label>
+                <input type="file" name="fileInput" class="form-control mt-2" id="fileInput" accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" />
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-2">Upload</button>
+        </div>
+    </form>
+</div>

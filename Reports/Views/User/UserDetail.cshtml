@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Reports.ViewModel.UserReportsViewModel>
+
+@{
+    ViewData["Title"] = "User Reports";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">Reports List</h3>
+            <a asp-action="UserList" class="btn btn-light">Back to Users</a>
+        </div>
+        <div class="card-body">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">
+                    No reports found.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Report Name</th>
+                                <th>Created Date</th>
+                                <th>User Name</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var report in Model)
+                            {
+                                <tr>
+                                    <td>@report.Name</td>
+                                    <td>@report.CreatedDate.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@report.UserName</td>
+                                    <td>
+                                        <a href="@Url.Action("ReportDetail", "Report", new { id = report.ReportId })" class="btn btn-sm btn-info">
+                                            <i class="bi bi-info-circle"></i> Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

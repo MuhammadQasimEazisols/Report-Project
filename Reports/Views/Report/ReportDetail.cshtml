@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Reports.ViewModel.ReportDetailsViewModel>
+
+@{
+    ViewData["Title"] = "Report Details";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">Report Detail</h3>
+            <a asp-controller="User" asp-action="UserList" class="btn btn-light">Back to User List</a>
+        </div>
+        <div class="card-body">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">
+                    No Data found.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Report Name</th>
+                                <th>TrackingNumber</th>
+                                <th>DeliveryStatus</th>
+                                <th>CarrierName</th>
+                                <th>ShippingAdress</th>
+                                <th>Price</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var report in Model)
+                            {
+                                <tr>
+                                    <td>@report.ReportName</td>
+                                    <td>@report.TrackingNumber</td>
+                                    <td>@report.DeliveryStatus</td>
+                                    <td>@report.CarrierName</td>
+                                    <td>@report.ShippingAdress</td>
+                                    <td>@report.Price</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>
