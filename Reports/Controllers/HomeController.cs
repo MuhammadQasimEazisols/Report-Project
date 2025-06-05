@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Reports.Models;
 using Reports.ViewModel;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.EntityFrameworkCore;
 
 namespace Reports.Controllers
 {
@@ -16,7 +18,17 @@ namespace Reports.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var reports = _dbContext.TblReports.Include(a=>a.User).ToList();
+            var userReportsViewModels = reports.Select(u => new UserReportsViewModel
+            {
+                ReportId = u.ReportId,
+                Name = u.Name,
+                CreatedDate = u.CreatedDate,
+                UserName = u.User.UserName,
+
+            }).OrderByDescending(a => a.CreatedDate).ToList();
+
+            return View(userReportsViewModels);
         }
 
         public IActionResult Login()

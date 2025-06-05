@@ -1,4 +1,6 @@
-﻿namespace Reports.ViewModel
+﻿using Reports.Models;
+
+namespace Reports.ViewModel
 {
     public class ReportDetailsViewModel
     {
@@ -10,5 +12,10 @@
         public string TrackingNumber { get; set; }
         public string ShippingAdress { get; set; }
         public int Price { get; set; }
+    }
+    
+    public class AllReportDetailsViewModel : ReportDetailsViewModel
+    {
+        public string UserName { get; set; }
     }
 }

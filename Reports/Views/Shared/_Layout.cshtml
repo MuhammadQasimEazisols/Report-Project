@@ -10,10 +10,10 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <div class="navbar-brand">Reports</div>
                 @if (!(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
                 ViewContext.RouteData.Values["action"]?.ToString() == "Login"))
                 {
+                    <a asp-action="Index" asp-controller="Home"><div class="navbar-brand">Reports</div></a>
                     <div class="ms-auto">
                         <form asp-controller="Home" asp-action="Logout" method="post">
                             <button type="submit" class="btn btn-outline-danger">Logout</button>
