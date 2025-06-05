@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.InkML;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Reports.Models;
 using Reports.ViewModel;
@@ -33,26 +31,26 @@ namespace Reports.Controllers
 
             return View(userReportsViewModels);
         }
-        
-        
-        public List<string> GetReportsForUser(string UserName)
+
+
+        public List<ReportListViewModel> GetReportsForUser(Guid userId)
         {
-            var reportNames = _dbContext.TblReports
-                .Where(r => r.User.UserName == UserName)
-                .Select(r => r.Name)
+            return _dbContext.TblReports
+                .Where(r => r.User.UserId == userId)
+                .Select(r => new ReportListViewModel { ReportId = r.ReportId, Name = r.Name })
                 .Distinct()
                 .ToList();
-            return reportNames;
         }
 
-        public IActionResult SearchReport(string selectedUser, string selectedReport)
+        public IActionResult SearchReport(Guid? selectedUser, Guid? selectedReport)
         {
-            ViewBag.Users = _dbContext.TblApplicationUsers.Select(r => r.UserName).ToList();
+            ViewBag.Users = _dbContext.TblApplicationUsers
+                    .Select(r => new { r.UserName, r.UserId })
+                    .ToList();
 
-            
-            if (!string.IsNullOrEmpty(selectedUser)&& !string.IsNullOrEmpty(selectedReport))
+            if (selectedUser != null && selectedReport!=null)
             {
-                var report = _dbContext.TblReports.Where(r => r.User.UserName == selectedUser && r.Name == selectedReport).FirstOrDefault();
+                var report = _dbContext.TblReports.Where(r => r.User.UserId == selectedUser && r.ReportId == selectedReport).FirstOrDefault();
                 var details = _dbContext.TblReportDetails.Where(a=>a.ReportId == report.ReportId).Include(a => a.Report).Include(a => a.Report.User).OrderBy(r => r.ReportId).ThenBy(r => r.ReportDetailId);
                 var userReportsViewModels = details.Select(u => new AllReportDetailsViewModel
                 {
@@ -70,9 +68,9 @@ namespace Reports.Controllers
                 ViewBag.SelectedReport = selectedReport;
                 return View(userReportsViewModels);
             }
-            if (!string.IsNullOrEmpty(selectedUser) && string.IsNullOrEmpty(selectedReport))
+            if (selectedUser != null && selectedReport == null)
             {
-                var details = _dbContext.TblReportDetails.Where(a=>a.Report.User.UserName == selectedUser).Include(a => a.Report).Include(a => a.Report.User).OrderBy(r => r.ReportId).ThenBy(r => r.ReportDetailId);
+                var details = _dbContext.TblReportDetails.Where(a=>a.Report.User.UserId == selectedUser).Include(a => a.Report).Include(a => a.Report.User).OrderBy(r => r.ReportId).ThenBy(r => r.ReportDetailId);
                 var userReportsViewModels = details.Select(u => new AllReportDetailsViewModel
                 {
                     ReportDetailId = u.ReportDetailId,
@@ -87,10 +85,9 @@ namespace Reports.Controllers
 
                 }).ToList();
                 ViewBag.SelectedUser = selectedUser;
-                ViewBag.SelectedReport = selectedReport;
                 return View(userReportsViewModels);
             }
-            if (string.IsNullOrEmpty(selectedUser) && string.IsNullOrEmpty(selectedReport))
+            if (selectedUser == null && selectedReport == null)
             {
                 var reports = _dbContext.TblReportDetails.Include(a => a.Report).Include(a => a.Report.User).OrderBy(r => r.ReportId).ThenBy(r => r.ReportDetailId);
                 var userReportsViewModels = reports.Select(u => new AllReportDetailsViewModel
@@ -106,7 +103,10 @@ namespace Reports.Controllers
                     Price = u.Price,
 
                 }).ToList();
-                ViewBag.Users = _dbContext.TblApplicationUsers.Select(r => r.UserName).ToList();
+                //ViewBag.Users = _dbContext.TblApplicationUsers.Select(r => r.UserName).ToList();
+                ViewBag.Users = _dbContext.TblApplicationUsers
+                    .Select(r => new { r.UserName, r.UserId })
+                    .ToList();
 
 
                 return View(userReportsViewModels);

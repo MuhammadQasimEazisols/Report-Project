@@ -9,10 +9,10 @@
             <label for="selectedUser">Select User</label>
             <select class="form-control" id="selectedUser" name="selectedUser" onchange="SelectedElement(this)">
                 <option value="">-- All Users --</option>
-                @foreach (var user in ViewBag.Users as List<string>)
+                @foreach (var user in ViewBag.Users)
                 {
-                    <option value="@user" >
-                        @user
+                    <option value="@user.UserId" >
+                        @user.UserName
                     </option>
                 }
             </select>
@@ -20,17 +20,8 @@
 
         <div class="col-md-4">
             <label for="selectedReport">Select Report</label>
-            <select class="form-control" id="selectedReport" name="selectedReport" onchange="SelectedReport(this)">
+            <select class="form-control" id="selectedReport" name="selectedReport">
                 <option value="">-- All Reports --</option>
-                @if (ViewBag.UserReports != null)
-                {
-                    foreach (var report in ViewBag.UserReports as List<string>)
-                    {
-                        <option value="@report">
-                            @report
-                        </option>
-                    }
-                }
             </select>
         </div>
 
@@ -92,25 +83,21 @@
      function SelectedElement(selectElement) {
         var selectedUser = selectElement.value;
         var reportSelect = document.getElementById('selectedReport');
-        reportSelect.innerHTML = '<option value="">-- All Reports --</option>';
 
         if (!selectedUser) return;
 
-        fetch('/Report/GetReportsForUser?UserName=' + encodeURIComponent(selectedUser))
+        fetch('/Report/GetReportsForUser?UserId=' + encodeURIComponent(selectedUser))
             .then(response => response.json())
             .then(data => {
                 data.forEach(report => {
                     var option = document.createElement('option');
-                    option.value = report;
-                    option.text = report;
+                    option.value = report.reportId;
+                    option.text = report.name;
                     reportSelect.appendChild(option);
                 });
             })
             .catch(error => {
                 console.error('Error fetching reports:', error);
             });
-    }
-    function SelectedReport(selectElement) {
-        ViewBag.SelectedReport = selectElement.value;
     }
 </script>
