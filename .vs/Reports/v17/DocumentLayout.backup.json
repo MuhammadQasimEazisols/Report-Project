@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\report\\searchreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\report\\searchreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\user\\userlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\user\\userdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\user\\userdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "Reports\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAC4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T06:53:34.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\User\\UserList.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\User\\UserList.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\User\\UserList.cshtml",
+              "RelativeToolTip": "Reports\\Views\\User\\UserList.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T06:51:53.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\User\\UserDetail.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\User\\UserDetail.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\User\\UserDetail.cshtml",
+              "RelativeToolTip": "Reports\\Views\\User\\UserDetail.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T06:51:22.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Reports\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T06:36:38.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchReport.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Report\\SearchReport.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\Report\\SearchReport.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Report\\SearchReport.cshtml",
+              "RelativeToolTip": "Reports\\Views\\Report\\SearchReport.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T06:32:52.377Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

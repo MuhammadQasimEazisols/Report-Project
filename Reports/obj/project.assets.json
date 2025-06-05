@@ -5451,11 +5451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\Reports\\Reports\\Reports.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj",
       "projectName": "Reports",
-      "projectPath": "C:\\Users\\Lenovo\\source\\repos\\Reports\\Reports\\Reports.csproj",
+      "projectPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\source\\repos\\Reports\\Reports\\obj\\",
+      "outputPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

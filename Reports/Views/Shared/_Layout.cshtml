@@ -13,7 +13,7 @@
                 @if (!(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
                 ViewContext.RouteData.Values["action"]?.ToString() == "Login"))
                 {
-                    <a asp-action="Index" asp-controller="Home"><div class="navbar-brand">Reports</div></a>
+                    <a asp-action="Index" asp-controller="Home" style="text-decoration:none"><div class="navbar-brand">Reports</div></a>
                     <div class="ms-auto">
                         <form asp-controller="Home" asp-action="Logout" method="post">
                             <button type="submit" class="btn btn-outline-danger">Logout</button>
