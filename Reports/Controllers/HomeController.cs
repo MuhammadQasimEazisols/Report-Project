@@ -2,8 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Reports.Models;
 using Reports.ViewModel;
 using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Office2010.Excel;
 using Microsoft.EntityFrameworkCore;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.Collections.Generic;
 
 namespace Reports.Controllers
 {
@@ -54,8 +55,6 @@ namespace Reports.Controllers
             HttpContext.Session.SetString("UserId", user.UserId.ToString());
             return RedirectToAction("Index");
         }
-
-        [HttpPost]
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
@@ -63,75 +62,94 @@ namespace Reports.Controllers
         }
 
         [HttpPost]
-        public IActionResult UploadFile(IFormFile fileInput)
+        public IActionResult UploadFile(List<IFormFile> fileInput)
         {
-            if (fileInput == null || fileInput.Length == 0)
+            if (fileInput == null || fileInput.Count == 0)
             {
                 TempData["Error"] = "No file selected or file is empty.";
                 return RedirectToAction("Index");
             }
+            
             List<string> reportData = new List<string>();
-            ExcelFileViewModel viewModel = new ExcelFileViewModel();
-            try
+            foreach(var file in fileInput)
             {
-                using (var stream = new MemoryStream())
+                ExcelFileViewModel viewModel = new ExcelFileViewModel();
+                try
                 {
-                    fileInput.CopyTo(stream);
-                    stream.Position = 0; 
-
-                    using (var workbook = new XLWorkbook(stream))
+                    using (var stream = new MemoryStream())
                     {
-                        var worksheet = workbook.Worksheet(1);
-                        var rows = worksheet.RangeUsed().RowsUsed().Skip(1).ToList();
+                        file.CopyTo(stream);
+                        stream.Position = 0;
 
-                        if (!rows.Any())
+                        using (var workbook = new XLWorkbook(stream))
                         {
-                            TempData["Error"] = "No data inside file";
-                            return RedirectToAction("Index");
-                        }
-                        var fileName = Path.GetFileName(fileInput.FileName);
-                        var userId = HttpContext.Session.GetString("UserId");
+                            var worksheet = workbook.Worksheet(1);
+                            var expectedHeaders = new List<string> { "TrackingNumber", "CarrierName", "Price", "ShippingAdress", "DeliveryStatus" };
+                            var headerRow = worksheet.Row(1);
+                            var actualHeaders = headerRow.Cells(1, expectedHeaders.Count)
+                                                         .Select(c => c.Value.ToString().Trim())
+                                                         .ToList();
 
-                        TblReport tblReport = new()
-                        {
-                            ReportId = Guid.NewGuid(),
-                            CreatedDate = DateTime.Now,
-                            Name = fileName,
-                            UserId = Guid.Parse(userId)
-                        };
-                        _dbContext.TblReports.Add(tblReport);
-
-                        foreach (var row in rows)
-                        {
-                            viewModel.TrackingNumber = row.Cell(1).Value.ToString();
-                            viewModel.CarrierName = row.Cell(2).Value.ToString();
-                            viewModel.Price = (int)row.Cell(3).Value;
-                            viewModel.ShippingAdress = row.Cell(4).Value.ToString();
-                            viewModel.DeliveryStatus = row.Cell(5).Value.ToString();
-
-                            TblReportDetail newReportDetails = new()
+                            bool headersValid = expectedHeaders.SequenceEqual(actualHeaders, StringComparer.OrdinalIgnoreCase);
+                            if (!headersValid)
                             {
-                                ReportDetailId = Guid.NewGuid(),
-                                ReportId = tblReport.ReportId,
-                                TrackingNumber = viewModel.TrackingNumber,
-                                ShippingAdress = viewModel.ShippingAdress,
-                                Price = viewModel.Price,
-                                CarrierName = viewModel.CarrierName,
-                                DeliveryStatus = viewModel.DeliveryStatus
+                                TempData["Error"] = "Excel file format is incorrect. Please ensure the column headers are: TrackingNumber, CarrierName, Price, ShippingAdress, DeliveryStatus. File Name=" + file.FileName;
+                                return RedirectToAction("Index");
+                            }
+
+                            var rows = worksheet.RangeUsed().RowsUsed().Skip(1).ToList();
+
+                            if (!rows.Any())
+                            {
+                                TempData["Error"] = "No data inside file.  File Name=" + file.FileName;
+                                return RedirectToAction("Index");
+                            }
+
+                            var fileName = Path.GetFileName(file.FileName);
+                            var userId = HttpContext.Session.GetString("UserId");
+
+                            TblReport tblReport = new()
+                            {
+                                ReportId = Guid.NewGuid(),
+                                CreatedDate = DateTime.Now,
+                                Name = fileName,
+                                UserId = Guid.Parse(userId)
                             };
-                            _dbContext.TblReportDetails.Add(newReportDetails);
+                            _dbContext.TblReports.Add(tblReport);
+
+                            foreach (var row in rows)
+                            {
+                                viewModel.TrackingNumber = row.Cell(1).Value.ToString();
+                                viewModel.CarrierName = row.Cell(2).Value.ToString();
+                                viewModel.Price = (int)row.Cell(3).Value;
+                                viewModel.ShippingAdress = row.Cell(4).Value.ToString();
+                                viewModel.DeliveryStatus = row.Cell(5).Value.ToString();
+
+                                TblReportDetail newReportDetails = new()
+                                {
+                                    ReportDetailId = Guid.NewGuid(),
+                                    ReportId = tblReport.ReportId,
+                                    TrackingNumber = viewModel.TrackingNumber,
+                                    ShippingAdress = viewModel.ShippingAdress,
+                                    Price = viewModel.Price,
+                                    CarrierName = viewModel.CarrierName,
+                                    DeliveryStatus = viewModel.DeliveryStatus
+                                };
+                                _dbContext.TblReportDetails.Add(newReportDetails);
+                            }
+                            _dbContext.SaveChanges();
                         }
-                        _dbContext.SaveChanges();
                     }
                 }
-                TempData["Success"] = "File uploaded successfully.";
-                return RedirectToAction("Index");
+                catch (Exception ex)
+                {
+                    TempData["Error"] = "Failed to read the Excel file. File Name=" + file.FileName;
+                    return RedirectToAction("Index");
+                }
             }
-            catch (Exception ex)
-            {
-                TempData["Error"] = "Failed to read the Excel file.";
-                return RedirectToAction("Index");
-            }
+
+            TempData["Success"] = "All files uploaded successfully.";
+            return RedirectToAction("Index");
         }
     }
 } 
