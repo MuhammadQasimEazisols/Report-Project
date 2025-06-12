@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj": {}
+    "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Reports.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj": {
+    "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Reports.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Reports.csproj",
         "projectName": "Reports",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Reports.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Reports.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -53,6 +53,10 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.105.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.12.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

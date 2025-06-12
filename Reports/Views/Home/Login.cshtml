@@ -1,15 +1,26 @@
 @{
     ViewData["Title"] = "Login";
 }
-
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 <div class="row justify-content-center">
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title text-center">Login</h3>
+                <h3 class="card-title text-center"><i>Welcome To Report</i></h3>
+                <h3 class="card-title text-center mt-2">Login</h3>
                 @if (ViewBag.Error != null)
                 {
                     <div class="alert alert-danger">@ViewBag.Error</div>
+                }
+                @if (ViewBag.Success != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Success</div>
                 }
                 <form method="post">
                     <div class="form-group mb-3">
@@ -20,8 +31,11 @@
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
+                    <a href="@Url.Action("ForgetPassword", "Home")" class="btn btn-success mt-3">Forgotten Password?</a>
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
+
+                <div class="mt-3">Don't have any account<a asp-action="SignUp" asp-controller="Home"><div>SignUp</div></a></div>
             </div>
         </div>
     </div>

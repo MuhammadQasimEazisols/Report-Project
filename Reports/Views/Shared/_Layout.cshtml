@@ -11,7 +11,9 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 @if (!(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
-                ViewContext.RouteData.Values["action"]?.ToString() == "Login"))
+                ViewContext.RouteData.Values["action"]?.ToString() == "Login" ||
+                ViewContext.RouteData.Values["action"]?.ToString() == "SignUp")
+                )
                 {
                     <a asp-action="Index" asp-controller="Home" style="text-decoration:none"><div class="navbar-brand">Reports</div></a>
                     <a asp-action="Logout" asp-controller="Home" style="text-decoration:none"><div class="navbar-brand">Logout</div></a>

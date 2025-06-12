@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Email Verification";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card border-success shadow">
+                <div class="card-body text-center">
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <h4 class="text-success">✅ Success</h4>
+                        <p>@ViewBag.Message</p>
+                        <a href="@Url.Action("Login", "Home")" class="btn btn-success mt-3">Go to Login</a>
+                    }
+                    else if (ViewBag.Error != null)
+                    {
+                        <h4 class="text-danger">❌ Verification Failed</h4>
+                        <p>@ViewBag.Error</p>
+                        <a href="@Url.Action("SignUp", "Home")" class="btn btn-danger mt-3">Sign Up Again</a>
+                    }
+                    else
+                    {
+                        <h4>Email Verification</h4>
+                        <p>Please wait...</p>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

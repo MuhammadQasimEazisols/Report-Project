@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\",
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\desktop\\report-project\\reports\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\views\\report\\searchreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\report\\searchreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\desktop\\report-project\\reports\\views\\home\\forgetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\views\\home\\forgetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\source\\repos\\reports-project\\reports\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|c:\\users\\lenovo\\desktop\\report-project\\reports\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B25B22E2-273C-40D2-994B-7C7A2163C162}|Reports\\Reports.csproj|solutionrelative:reports\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Program.cs",
-              "RelativeDocumentMoniker": "Reports\\Program.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Program.cs",
-              "RelativeToolTip": "Reports\\Program.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEAAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T08:59:47.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SearchReport.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Report\\SearchReport.cshtml",
-              "RelativeDocumentMoniker": "Reports\\Views\\Report\\SearchReport.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Views\\Report\\SearchReport.cshtml",
-              "RelativeToolTip": "Reports\\Views\\Report\\SearchReport.cshtml",
-              "ViewState": "AgIAAM8AAAAAAAAAAAApwN0AAAATAAAAAAAAAA==",
+              "Title": "ForgetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Views\\Home\\ForgetPassword.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\Home\\ForgetPassword.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Views\\Home\\ForgetPassword.cshtml*",
+              "RelativeToolTip": "Reports\\Views\\Home\\ForgetPassword.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T08:52:33.478Z",
+              "WhenOpened": "2025-06-12T06:00:58.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ReportController.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Controllers\\ReportController.cs",
-              "RelativeDocumentMoniker": "Reports\\Controllers\\ReportController.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Reports-Project\\Reports\\Controllers\\ReportController.cs",
-              "RelativeToolTip": "Reports\\Controllers\\ReportController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAgwHAAAAAzAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Reports\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Reports\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMBAAAAAAAAAAAIwDgBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:44:11.118Z",
+              "WhenOpened": "2025-06-12T05:58:36.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "Reports\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\Desktop\\Report-Project\\Reports\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "Reports\\Views\\Home\\Login.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-12T05:50:05.98Z",
               "EditorCaption": ""
             }
           ]
